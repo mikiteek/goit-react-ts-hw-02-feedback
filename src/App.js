@@ -24,7 +24,7 @@ countPositiveFeedbackPercentage = () => this.state.good * 100 / this.countTotalF
   render() {
     const {good, neutral, bad} = this.state;
     const total = this.countTotalFeedback();
-    const positivesPercent = this.countPositiveFeedbackPercentage().toFixed(2);
+    const positivesPercent = parseFloat(this.countPositiveFeedbackPercentage().toFixed(2));
     return (
       <Section title="Please leave feedback">
         <FeedbackOptions
