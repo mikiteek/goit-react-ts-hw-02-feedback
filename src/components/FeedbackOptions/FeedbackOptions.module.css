@@ -1,0 +1,6 @@
+.btnFeedback:not(:last-child) {
+  margin-right: 15px;
+}
+.btnFeedback {
+  cursor: pointer;
+}
