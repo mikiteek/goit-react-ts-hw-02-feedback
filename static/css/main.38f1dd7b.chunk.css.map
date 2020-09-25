@@ -1,0 +1,1 @@
+{"version":3,"sources":["FeedbackOptions.module.css"],"names":[],"mappings":"AAAA,qDACE,iBACF,CACA,oCACE,cACF","file":"main.38f1dd7b.chunk.css","sourcesContent":[".btnFeedback:not(:last-child) {\n  margin-right: 15px;\n}\n.btnFeedback {\n  cursor: pointer;\n}"]}
