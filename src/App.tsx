@@ -4,22 +4,28 @@ import Statistics from "./components/Statistics/Statistics";
 import Section from "./components/Section/Section";
 import Notification from "./components/Notification/Notification";
 
-class App extends Component {
-  state = {
+interface stateTypes {
+  good: number,
+  neutral: number,
+  bad: number
+}
+
+class App extends Component<{}, stateTypes> {
+  public state = {
     good: 0,
     neutral: 0,
     bad: 0,
   }
-handleIncrementFeedback = type => {
-    this.setState(prevState => {
-      return {
-        [type]: prevState[type] + 1,
-      }
-    })
-}
-countTotalFeedback = () => Object.values(this.state).reduce((acc, cur) => acc + cur);
 
-countPositiveFeedbackPercentage = () => this.state.good * 100 / this.countTotalFeedback();
+private handleIncrementFeedback = (type: keyof stateTypes): void => {
+  this.setState(prevState =>
+    ({[type]: prevState[type] + 1} as any)
+  );
+}
+
+private countTotalFeedback = (): number => Object.values(this.state).reduce((acc, cur) => acc + cur);
+
+private countPositiveFeedbackPercentage = (): number => this.state.good * 100 / this.countTotalFeedback();
 
   render() {
     const {good, neutral, bad} = this.state;
